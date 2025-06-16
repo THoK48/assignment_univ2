@@ -31,16 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // 휠 스크롤로 이동
 window.addEventListener("wheel", (e) => {
-  e.preventDefault(); // <- 이 줄 추가
   if (isScrolling) return;
   if (e.deltaY > 0) scrollToSection(currentIndex + 1);
   else scrollToSection(currentIndex - 1);
-}, { passive: false }); // <- 이 옵션도 꼭 붙여야 preventDefault가 동작함
+}, { passive: false }); 
 
 
-  // 메뉴 클릭으로 이동 (메뉴 닫지 않음)
   navLinks.forEach((link, i) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -48,12 +45,10 @@ window.addEventListener("wheel", (e) => {
     });
   });
 
-  // 햄버거 버튼으로 사이드 메뉴 열기/닫기
   toggleButton.addEventListener("click", () => {
     sideMenu.classList.toggle("open");
   });
 
-  // 현재 화면에서 가장 중앙에 위치한 섹션을 구함
   const getCurrentSectionIndex = () => {
     let index = 0;
     sections.forEach((section, i) => {
@@ -65,7 +60,6 @@ window.addEventListener("wheel", (e) => {
     return index;
   };
 
-  // 일반 스크롤 시에도 섹션 강조 갱신
   window.addEventListener("scroll", () => {
     const index = getCurrentSectionIndex();
     if (index !== currentIndex) {
@@ -75,7 +69,15 @@ window.addEventListener("wheel", (e) => {
     }
   });
 
-  // 초기 섹션 강조
   activateSection(0);
   updateNav(0);
+    document.querySelectorAll(".card-stack").forEach(stack => {
+    const cards = stack.querySelectorAll(".card");
+    cards.forEach((card, i) => {
+      card.style.transform = `translateY(${i * 8}px)`;
+      card.style.zIndex = cards.length - i;
+      card.style.filter = `brightness(${1 - i * 0.1}) blur(${i * 0.5}px)`;
+    });
+  });
+  
 });
