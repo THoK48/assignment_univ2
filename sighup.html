@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+/  <link rel="stylesheet" href="signup.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
+  <script defer src="script.js"></script>
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle"></div>
+      <div class="top-menu">
+        <a href="index.html">Main</a>
+        <a href="sighup.html" style="color: #00b8d9; text-decoration: none;">signup</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+ <div class="container">
+  <h1>회원가입</h1>
+  <hr>
+  <form>
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">이메일</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+
+    <div class="form-group">
+      <label for="confirm">비밀번호 확인</label>
+      <input type="password" id="confirm" name="confirm" required />
+    </div>
+
+    <div class="form-group">
+      <label>성별</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" id="gender" required /> 남</label>
+        <label><input type="radio" name="gender" id="gender" required /> 여</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phonenum">전화번호</label>
+      <input type="text" id="phonenum" name="phonenum"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        required />
+    </div>
+
+    <div class="form-group">
+      <label for="birthday">생일</label>
+      <input type="date" id="birthday" name="birthday" required />
+    </div>
+    <div class="form-group">
+      <label for="age">나이</label>
+      <input type="text" id="age" name="age"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+        required />
+    </div>
+    <div class="form-group">
+      <label>개인정보 이용 동의</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="check" required /> 동의</label>
+        <label><input type="checkbox" id="check" disabled /> 비동의</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="signUpBtn">가입하기</button>
+    </div>
+  </form>
+</div>
+  <script src="signup.js"></script>
+</body>
+</html>
