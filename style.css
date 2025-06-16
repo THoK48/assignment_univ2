@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #111;
+  color: #eee;
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px;
+}
+
+.menu-toggle {
+  font-size: 28px;
+  color: #eee;
+  cursor: pointer;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100vh;
+  background-color: #222;
+  padding-top: 80px;
+  transition: left 0.3s ease;
+  z-index: 998;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.side-menu li {
+  margin: 20px;
+}
+
+.side-menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.side-menu a.active {
+  color: #00b8d9;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 20px;
+  scroll-snap-align: start;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero {
+  position: relative;
+  background: url('https://www.arknights.kr/img/main_bg.jpg') center center / cover no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00b8d9;
+}
+
+ul {
+  list-style: square;
+  padding-left: 20px;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.signup-form input {
+  padding: 8px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.signup-form input:focus {
+  border-color: #00b8d9;
+  box-shadow: 0 0 3px #00b8d9;
+}
+
+.signup-form button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1.3rem;
+  font-family: 'Nanum Pen Script', cursive;
+  background-color: #00b8d9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #0091b2;
+}
