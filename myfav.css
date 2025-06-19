@@ -126,9 +126,9 @@ body::-webkit-scrollbar {
   height: 100%;
   object-fit: contain;
   z-index: 2;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-out; 
 }
-.object img.main_sha {
+img.main_sha {
   position: absolute;
   top: 10px;
   left: -20px;
@@ -139,7 +139,7 @@ body::-webkit-scrollbar {
   opacity: 0.8;
   pointer-events: none;
   filter: blur(10px); 
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-out; 
 }
 .object:hover img.main,
 .object:hover img.main_sha {
@@ -237,4 +237,9 @@ body::-webkit-scrollbar {
 .object.fade {
   opacity: 0.2;
   pointer-events: none;
+}
+.main,
+.main_sha,
+.shadow {
+  transition: transform 0.2s ease-out;
 }

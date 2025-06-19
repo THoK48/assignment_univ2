@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let originalPositions = new Map();
 
-  // 초기 좌표 기억시키기
   objects.forEach((obj) => {
     const rect = obj.getBoundingClientRect();
     const containerRect = document.getElementById('object-container').getBoundingClientRect();
@@ -29,11 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const height = rect.height;
     originalPositions.set(obj, { left, top, width, height });
 
-    // 초기 위치 적용 (style로 박제)
     obj.style.left = `${left}px`;
     obj.style.top = `${top}px`;
 
-    // 🔥 타자기 효과용 요소
     const title = obj.dataset.title;
     const titleDiv = obj.querySelector('.object-title');
 
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       typeText(titleDiv, title); 
     });
 
-    // 클릭 시 중앙 이동 + 설명 박스 표시
     obj.addEventListener('click', () => {
       const desc = obj.dataset.description.replace(/\n/g, '<br>');
       descriptionBox.querySelector('h2').textContent = title;
@@ -80,4 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     objects.forEach(obj => obj.classList.remove('fade'));
   });
+
+document.addEventListener('mousemove', (e) => {
+  const container = document.getElementById('object-container');
+  const xRatio = e.clientX / container.clientWidth;
+  const yRatio = e.clientY / container.clientHeight;
+
+  const offsetX_main = (xRatio - 0.5) * 50;
+  const offsetY_main = (yRatio - 0.5) * 50;
+
+  const offsetX_shadow = (xRatio - 0.5) * 20;
+  const offsetY_shadow = (yRatio - 0.5) * 20;
+
+  document.querySelectorAll(".main, .main_sha").forEach(el => {
+    el.style.transform = `translate(${offsetX_main}px, ${offsetY_main}px)`;
+  });
+
+  document.querySelectorAll(".shadow").forEach(el => {
+    el.style.transform = `translate(${offsetX_shadow}px, ${offsetY_shadow}px)`;
+  });
+  document.querySelectorAll(".object-title").forEach(el => {
+    el.style.transform = `translate(${offsetX_shadow}px, ${(offsetX_shadow + 10)}px)`;
+  });
+  
+});
+
 });

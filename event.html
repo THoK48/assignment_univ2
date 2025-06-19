@@ -18,45 +18,53 @@
     <div class="menu-toggle" id="menu-toggle"></div>
       <div class="top-menu">
         <a href="index.html">Main</a>
-        <a href="signup.html">signup</a>
-        <a href="myfav.html">Skills</a>
-        <a href="event.html" style="color: #00b8d9; text-decoration: none;">Contact</a>
+        <a href="signup.html">Signup</a>
+        <a href="myfav.html">favorite</a>
+        <a href="event.html" style="color: #00b8d9; text-decoration: none;">useEvent</a>
     </div>
   </nav>
 
 <section class="event-table-section">
-  <h2>자바스크립트 이벤트 정리</h2>
+  <h2>이벤트 목록</h2>
   <table class="event-table">
     <thead>
       <tr>
         <th>이벤트</th>
+        <th>사용 위치</th>
         <th>설명</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>onmouseover / onmouseout</code></td>
-        <td>마우스를 올리면 강조, 벗어나면 원상복귀</td>
+        <td><code>addEventListener</code></td>
+        <td>메인 페이지 - 휠 이벤트, 네비게이션 햄버거 버튼 이벤트등 <br>
+            자기소개 페이지 - 마우스 움직일때 이벤트등 <br></td>
+        <td>브라우저에서 특정 이벤트가 발생했을 때 실행할 함수를 등록</td>
       </tr>
       <tr>
-        <td><code>onload</code></td>
-        <td>문서나 이미지, 프레임 등이 완전히 로드되었을 때 발생</td>
+        <td><code>mouseenter</code></td>
+        <td>자기소개 페이지 - 타이핑효과</td>
+        <td>마우스를 해당 객체에 올렸을 때 타이핑효과</td>
       </tr>
       <tr>
-        <td><code>onchange</code></td>
-        <td>사용자가 input/select/textarea 등의 값을 바꾸고 포커스를 벗어났을 때 발생</td>
+        <td><code>mousemove</code></td>
+        <td>자기소개 페이지 - 마우스에 따라 객체 움직임</td>
+        <td>마우스 위치에 따라 이미지 움직임</td>
       </tr>
       <tr>
         <td><code>onclick</code></td>
-        <td>사용자가 특정 개체를 클릭할때 발생</td>
+        <td>회원가입 페이지 - 가입 버튼</td>
+        <td>입력값 alert 출력, 폼 제출</td>
       </tr>
       <tr>
-        <td><code>onfocus / onblur</code></td>
-        <td>선택 시 강조, 벗어나면 원상복귀</td>
+        <td><code>wheel</code></td>
+        <td>메인 페이지 - 휠 이벤트</td>
+        <td>휠로 섹션 간 스크롤 이동 (상하방향감지)</td>
       </tr>
       <tr>
-        <td><code>onwheel</code></td>
-        <td>휠 스크롤 시 1칸씩 부드럽게 이동</td>
+        <td><code>scroll</code></td>
+        <td>메인 페이지 - 섹션 별 분류</td>
+        <td>현재 화면 위치에 따라 네비게이션 및 섹션 활성화 갱신</td>
       </tr>
     </tbody>
   </table>
