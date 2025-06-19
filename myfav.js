@@ -13,6 +13,7 @@ function typeText(element, text, speed = 40) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    alert("제가 좋아하는 것들을 띄워봤습니다")
   const objects = document.querySelectorAll('.object');
   const descriptionBox = document.getElementById('description-box');
   const closeBtn = document.getElementById('close-description');
